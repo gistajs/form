@@ -1,0 +1,31 @@
+@import 'tailwindcss';
+@import './ui/css/daisyui.css';
+@plugin 'daisyui' {
+  logs: false;
+}
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@plugin 'daisyui/theme' {
+  name: 'light';
+  default: true;
+  --color-primary: var(--color-indigo-700);
+  --color-primary-content: var(--color-base-100);
+  --radius-field: var(--radius-lg);
+}
+
+@plugin 'daisyui/theme' {
+  name: 'dark';
+  prefersdark: true;
+  --color-primary: var(--color-indigo-400);
+  --color-primary-content: var(--color-indigo-50);
+  --radius-field: var(--radius-lg);
+}
+
+@layer base {
+  html,
+  body {
+    @media (prefers-color-scheme: dark) {
+      color-scheme: dark;
+    }
+  }
+}
