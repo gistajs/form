@@ -1,0 +1,49 @@
+@layer utilities {
+  /* Soften default control focus in daisyUI v5 while leaving semantic variants
+     like input-error and select-primary to keep their own focus colors. */
+  :is(.input, .select, .textarea):not(
+      .input-primary,
+      .input-secondary,
+      .input-accent,
+      .input-info,
+      .input-success,
+      .input-warning,
+      .input-error,
+      .select-primary,
+      .select-secondary,
+      .select-accent,
+      .select-info,
+      .select-success,
+      .select-warning,
+      .select-error,
+      .textarea-primary,
+      .textarea-secondary,
+      .textarea-accent,
+      .textarea-info,
+      .textarea-success,
+      .textarea-warning,
+      .textarea-error
+    ):is(:focus, :focus-within) {
+    --input-color: color-mix(
+      in oklab,
+      var(--color-base-content) 25%,
+      transparent
+    );
+    outline-color: var(--input-color);
+  }
+}
+
+/*
+  DaisyUI loads into @layer utilities / daisyui.* — layered styles lose to unlayered.
+  Keep these outside @layer so they override the plugin without !important.
+*/
+.checkbox,
+.checkbox::before {
+  transition: none;
+}
+:is(.toggle, .toggle > *) {
+  transition-duration: 50ms;
+}
+:is(.radio:checked, .radio[aria-checked='true']) {
+  animation-duration: 50ms;
+}
