@@ -1,0 +1,18 @@
+{
+  "id": "internal:skills",
+  "slug": "skills",
+  "name": "Skills",
+  "description": "Internal starter-facing skills add-on for Gista starters.",
+  "release": "2026-11-05-001",
+  "files": [
+    ".agents/skills/gistajs/SKILL.md",
+    ".agents/skills/gistajs/references/crud.md",
+    ".agents/skills/gistajs/references/migrate.md",
+    ".agents/skills/gistajs/references/model.md",
+    ".agents/skills/gistajs/references/page.md",
+    ".agents/skills/gistajs/references/protect.md"
+  ],
+  "touchpoints": [],
+  "dependencies": {},
+  "env": []
+}
